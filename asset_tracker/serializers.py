@@ -21,10 +21,8 @@ class EmployeeSerializer(serializers.ModelSerializer):
             'salary',
             'date_of_joining',
             )
-        read_only_fields = (
-            'phone',
-            'salary',
-            'date_of_joining')
+        read_only_fields = ('user',)
+        
 
 
 # class BrandSerializer(serializers.ModelSerializer):

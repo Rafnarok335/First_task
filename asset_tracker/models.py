@@ -14,7 +14,7 @@ class User(AbstractUser):
 ## This is the employee table where i store the employee details with the fields here. I kept field here minimum.
 class Employee(models.Model):
     emp_id = models.AutoField(primary_key=True)
-    user = models.OneToOneField(User, on_delete=models.CASCADE,related_name='employee')
+    #user = models.OneToOneField(User, on_delete=models.CASCADE,related_name='employee')
     name = models.CharField(max_length=100)
     username = models.CharField(max_length=100)
     email = models.EmailField()
@@ -42,14 +42,14 @@ class Manager(models.Model):
         return self.user.username
 
 
-class ManagerForm(ModelForm):
-    class Meta:
-        model = Manager
-        fields = ['name','username','email','phone','address','department','salary','company']
+# class ManagerForm(ModelForm):
+#     class Meta:
+#         model = Manager
+#         fields = ['name','username','email','phone','address','department','salary','company']
 
 
-        def __init__(self, *args, **kwargs):
-            super(ManagerForm, self).__init__(*args, **kwargs)
+#         def __init__(self, *args, **kwargs):
+#             super(ManagerForm, self).__init__(*args, **kwargs)
 
 
 
